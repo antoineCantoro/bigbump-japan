@@ -1,0 +1,24 @@
+{
+  "name": "bigbump",
+  "version": "1.0.0",
+  "description": "",
+  "private": true,
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "webpack",
+    "sass": "sass --watch ./src/scss:./dist/css --style compressed",
+    "prefix": "postcss ./dist/css/main.css --use autoprefixer -d ./dist/css/"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "browserslist": "last 4 versions",
+  "devDependencies": {
+    "webpack": "^5.26.2",
+    "webpack-cli": "^4.5.0"
+  },
+  "dependencies": {
+    "gsap": "^3.6.0",
+    "imagesloaded": "^4.1.4"
+  }
+}

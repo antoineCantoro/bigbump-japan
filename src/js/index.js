@@ -9,7 +9,7 @@ let revealPage = function(){
     let tl = gsap.timeline();
         tl.to(".screen-overlay .overlay", {
             width: 0, duration: 1, ease: "power4.inOut"})
-          .from('.top-banner', {width: 0, duration:1, ease: "power3.out"}, "-=0.5")
+          .fromTo('.top-banner', {width: 0}, {width: "100%", duration:1, ease: "power3.out"}, "-=0.5")
           .from('h1', {y: 50, opacity:0, duration:1, rotation:10, transformOrigin:"left 0%", ease: "power4.out"}, "-=0.5")
           .from('.japanese-kanji img', {x:-20, opacity:0, duration:1, ease:"power2.out", stagger: .2}, "-=0.5")
           .from('.circle', {scale:0, duration: .5, stagger:0.2, ease:"power3.inOut"}, "-=1")
@@ -71,13 +71,28 @@ let appearSheetItems = function(){
 }
 
 
+let appearText = function(classname) {
+    gsap.utils.toArray(classname).forEach((item) => {
+        gsap.from(item, {
+            x: -20,
+            opacity:0,
+            duration: 1,
+            ease: "power4.out",
+            scrollTrigger: {
+                trigger: item,
+                start: "top bottom-=200px",
+            }
+        });
+    });
+}
+
 //Wait Document Ready
 document.addEventListener("DOMContentLoaded", function() {
-
 
     //When images are loaded
     imagesLoaded( document.querySelector('.hero'), function( instance ) {
         revealPage();
+        appearText('.appear-left');
     });
    
 });

@@ -86,6 +86,7 @@ body {
     .container {
         margin: 0 auto;
         max-width: 1200px;
+        overflow:visible;
     }
 }
 
@@ -156,7 +157,8 @@ header {
             img {
                 max-width: 100%;
                 width: auto;
-                padding-bottom: 0;}
+                padding-bottom: 0;                
+            }
         }
     }
 }

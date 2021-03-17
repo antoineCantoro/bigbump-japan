@@ -16,6 +16,7 @@ let revealPage = function(){
           .set(".screen-overlay", {display: "none", onComplete: function(){
             revealImages();
             appearSheetItems();
+            updateCirclePosition();
           }})
 }
 
@@ -86,13 +87,38 @@ let appearText = function(classname) {
     });
 }
 
+
+let clientX = 0;
+let clientY = 0;
+
+function updateCirclePosition(){
+    let circles = document.querySelectorAll('.circle')
+    console.log(circles)
+
+    circles.forEach(function(item){
+        console.log(item)
+        item.style.transform = "translate("+ -clientX/100+"px,"+ -clientY/100+"px)";
+    })
+
+    requestAnimationFrame(updateCirclePosition)
+}
+
+
+
 //Wait Document Ready
 document.addEventListener("DOMContentLoaded", function() {
+
+    let cursor = document.querySelector('.custom-cursor');
 
     //When images are loaded
     imagesLoaded( document.querySelector('.hero'), function( instance ) {
         revealPage();
         appearText('.appear-left');
+
+        window.addEventListener("mousemove", (e)=> {
+            clientX = e.clientX
+            clientY = e.clientY
+        })
     });
    
 });

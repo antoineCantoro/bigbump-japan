@@ -1,10 +1,9 @@
 import gsap from "gsap"
 import ScrollTrigger from 'gsap/ScrollTrigger'
 import imagesLoaded from "imagesloaded"
-
 gsap.registerPlugin(ScrollTrigger);
 
-//Reveal Overlay
+// Reveal Overlay
 let revealPage = function(){
     let tl = gsap.timeline();
         tl.to(".screen-overlay .overlay", {
@@ -20,7 +19,7 @@ let revealPage = function(){
           }})
 }
 
-//Reveal Images Animation when on screen
+// Reveal Images Animation when on screen
 let revealImages = function(){
     let imagesItems = document.querySelectorAll(".hero picture")
     gsap.utils.toArray(imagesItems).forEach((item) => {
@@ -54,7 +53,7 @@ let revealImages = function(){
 }
 
 
-//Reveal Item Animation when on screen
+// Reveal Item Animation when on screen
 let appearSheetItems = function(){
     let sheetItems = document.querySelectorAll(".sheet-container li")
     gsap.utils.toArray(sheetItems).forEach((item) => {
@@ -92,12 +91,10 @@ let clientX = 0;
 let clientY = 0;
 
 function updateCirclePosition(){
-    let circles = document.querySelectorAll('.circle')
-    console.log(circles)
-
+    const circles = document.querySelectorAll('.circle')
     circles.forEach(function(item){
         console.log(item)
-        item.style.transform = "translate("+ -clientX/100+"px,"+ -clientY/100+"px)";
+        item.style.transform = "translate(" + -clientX / 100 + "px," + -clientY / 100 + "px)";
     })
 
     requestAnimationFrame(updateCirclePosition)
@@ -105,13 +102,13 @@ function updateCirclePosition(){
 
 
 
-//Wait Document Ready
+// Wait Document Ready
 document.addEventListener("DOMContentLoaded", function() {
 
-    let cursor = document.querySelector('.custom-cursor');
+    const cursor = document.querySelector('.custom-cursor');
 
-    //When images are loaded
-    imagesLoaded( document.querySelector('.hero'), function( instance ) {
+    // When images are loaded
+    imagesLoaded( document.querySelector('.hero'), function() {
         revealPage();
         appearText('.appear-left');
 

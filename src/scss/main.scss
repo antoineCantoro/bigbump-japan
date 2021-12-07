@@ -14,7 +14,7 @@ body {
     color: $black-light-color;}
 
 
-//Loader Overlays
+// Loader Overlays
 .screen-overlay {
     position: fixed;
     height: 100vh;
@@ -35,7 +35,7 @@ body {
 }
 
 
-//Top Banner
+// Top Banner
 .top-banner {
     height: 12px;
     width: 100%;
@@ -43,7 +43,7 @@ body {
 }
 
 
-//Circles 
+// Circles 
 .circle {
     background: $primary-color;
     border-radius: 50%;
@@ -76,7 +76,7 @@ body {
 
 
 
-//Main Container
+// Main Container
 .container {
     padding: 0 32px;
     overflow: hidden;
@@ -92,7 +92,7 @@ body {
 
 
 
-//Header
+// Header
 header {
     position: relative;
     padding: 3rem 0;
@@ -116,7 +116,7 @@ header {
 }
 
 
-//Hero
+// Hero
 .hero {
     position: relative;
 
@@ -166,7 +166,7 @@ header {
 
 
 
-//
+// 
 @media (min-width: 768px) {
     .main-container {
         display: grid;
@@ -175,7 +175,7 @@ header {
 }
 
 
-//Sheet Informations
+// Sheet Informations
 .sheet-container {
     font-family: $text-font;
     padding-bottom: 96px;
@@ -223,7 +223,7 @@ header {
 }
 
 
-//Text Informations
+// Text Informations
 .informations {
     h2 {
         font-weight: 600;
@@ -240,7 +240,7 @@ header {
     }
 }
 
-//Anchor Link
+// Anchor Link
 .anchor-top-link {
     display: none;
     text-align: center;
@@ -267,7 +267,7 @@ header {
 }
 
 
-//Credits
+// Credits
 .credits-container {
     display: flex;
     justify-content: left;
